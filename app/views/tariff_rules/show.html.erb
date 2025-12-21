@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tariff_rule %>
+
+<div>
+  <%= link_to "Edit this tariff rule", edit_tariff_rule_path(@tariff_rule) %> |
+  <%= link_to "Back to tariff rules", tariff_rules_path %>
+
+  <%= button_to "Destroy this tariff rule", @tariff_rule, method: :delete %>
+</div>

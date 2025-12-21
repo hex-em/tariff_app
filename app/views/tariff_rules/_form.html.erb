@@ -1,0 +1,32 @@
+<%= form_with(model: tariff_rule) do |form| %>
+  <% if tariff_rule.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tariff_rule.errors.count, "error") %> prohibited this tariff_rule from being saved:</h2>
+
+      <ul>
+        <% tariff_rule.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :hs_code, style: "display: block" %>
+    <%= form.text_field :hs_code %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :rate, style: "display: block" %>
+    <%= form.text_field :rate %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

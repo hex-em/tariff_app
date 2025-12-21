@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hs_code: MyString
+  description: MyString
+  rate: 9.99
+
+two:
+  hs_code: MyString
+  description: MyString
+  rate: 9.99

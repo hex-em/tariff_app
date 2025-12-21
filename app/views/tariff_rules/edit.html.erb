@@ -1,0 +1,12 @@
+<% content_for :title, "Editing tariff rule" %>
+
+<h1>Editing tariff rule</h1>
+
+<%= render "form", tariff_rule: @tariff_rule %>
+
+<br>
+
+<div>
+  <%= link_to "Show this tariff rule", @tariff_rule %> |
+  <%= link_to "Back to tariff rules", tariff_rules_path %>
+</div>

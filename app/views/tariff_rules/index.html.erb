@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Tariff rules" %>
+
+<h1>Tariff rules</h1>
+
+<div id="tariff_rules">
+  <% @tariff_rules.each do |tariff_rule| %>
+    <%= render tariff_rule %>
+    <p>
+      <%= link_to "Show this tariff rule", tariff_rule %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tariff rule", new_tariff_rule_path %>
