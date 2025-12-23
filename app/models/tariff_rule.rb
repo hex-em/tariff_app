@@ -7,7 +7,7 @@ class TariffRule < ApplicationRecord
 
   def duty_for(declared_value)
     return nil if declared_value.nil?
-                
+
     rate.to_d * declared_value.to_d / 100
   end
 end
