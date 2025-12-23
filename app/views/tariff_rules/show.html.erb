@@ -8,3 +8,35 @@
 
   <%= button_to "Destroy this tariff rule", @tariff_rule, method: :delete %>
 </div>
+
+<hr>
+
+<h2>Duty calculator</h2>
+
+<%= form_with url: tariff_rule_path(@tariff_rule), method: :get, local: true do |form| %>
+  <div>
+    <%= form.label :declared_value, "Declared customs value" %><br>
+    <%= form.number_field :declared_value,
+                          value: params[:declared_value],
+                          step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.submit "Calculate duty" %>
+  </div>
+<% end %>
+
+<% if params[:declared_value].present? %>
+  <% declared_value = BigDecimal(params[:declared_value]) rescue nil %>
+
+  <% if declared_value %>
+    <p>
+      Duty on
+      <%= number_to_currency(declared_value) %>
+      is
+      <%= number_to_currency(@tariff_rule.duty_for(declared_value)) %>.
+    </p>
+  <% else %>
+    <p>Could not understand that value.</p>
+  <% end %>
+<% end %>
