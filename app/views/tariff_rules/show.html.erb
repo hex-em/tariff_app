@@ -29,13 +29,23 @@
 <% if params[:declared_value].present? %>
   <% declared_value = BigDecimal(params[:declared_value]) rescue nil %>
 
-  <% if declared_value %>
+ <% if declared_value %>
+    <% duty = @tariff_rule.duty_for(declared_value) %>
+    <% landed_cost = declared_value + duty %>
+
     <p>
       Duty on
       <%= number_to_currency(declared_value) %>
       is
-      <%= number_to_currency(@tariff_rule.duty_for(declared_value)) %>.
+      <%= number_to_currency(duty) %>.
     </p>
+
+    <h3>Landed cost summary</h3>
+    <ul>
+      <li>Product value: <%= number_to_currency(declared_value) %></li>
+      <li>Duty: <%= number_to_currency(duty) %></li>
+      <li><strong>Total landed cost: <%= number_to_currency(landed_cost) %></strong></li>
+    </ul>
   <% else %>
     <p>Could not understand that value.</p>
   <% end %>
