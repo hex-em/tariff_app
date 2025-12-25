@@ -11,18 +11,22 @@
 
 <hr>
 
-<h2>Duty calculator</h2>
+<h2>Duty Calculator</h2>
+<p>
+  Estimate the US Import Duty for this HTS (tariff) code by entering the declared customs value
+  Heliladder would use when bringing this part into the United States.
+</p>
 
 <%= form_with url: tariff_rule_path(@tariff_rule), method: :get, local: true do |form| %>
   <div>
-    <%= form.label :declared_value, "Declared customs value" %><br>
+    <%= form.label :declared_value, "Declared Customs Value" %><br>
     <%= form.number_field :declared_value,
                           value: params[:declared_value],
                           step: 0.01 %>
   </div>
 
   <div>
-    <%= form.submit "Calculate duty" %>
+    <%= form.submit "Calculate Duty" %>
   </div>
 <% end %>
 

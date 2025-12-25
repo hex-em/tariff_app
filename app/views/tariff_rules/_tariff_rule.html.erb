@@ -1,6 +1,6 @@
 <div id="<%= dom_id tariff_rule %>">
   <div>
-    <strong>Hs code:</strong>
+    <strong>HTS (tariff) Code:</strong>
     <%= tariff_rule.hs_code %>
   </div>
 
@@ -10,8 +10,13 @@
   </div>
 
   <div>
-    <strong>Rate:</strong>
+    <strong>Duty Rate (%):</strong>
     <%= tariff_rule.rate %>
   </div>
 
+  <div>
+    <em>
+      This U.S. Harmonized Tariff Schedule (HTS) code classifies this item and the duty rate is applied to its declared customs value when Heliladder imports it into the United States.
+    </em>
+  </div>
 </div>

@@ -22,9 +22,12 @@
   </div>
 
   <div>
-    <%= form.label :rate, style: "display: block" %>
-    <%= form.text_field :rate %>
-  </div>
+  <%= form.label :rate, "Duty rate", style: "display: block" %>
+  <%= form.text_field :rate %>
+  <p>
+    Enter <strong>5.7</strong> for 5.7%, or <strong>0.057</strong> if you prefer the decimal form.
+  </p>
+</div>
 
   <div>
     <%= form.submit %>
